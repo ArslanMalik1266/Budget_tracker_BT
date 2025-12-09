@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey_background">#F4F6F6</color>
+    <color name="fab_btn_color">#FFC727</color>
+    <color name="main_card_background_color">#455A64</color>
+    <color name="bluish_dark">#2C383F</color>
+    <color name="secondary_card_background_color">#81B2CA</color>
+    <color name="light_green">#D9E7E5</color>
+    <color name="light_expense_card">#E6E2E6</color>
+</resources>
