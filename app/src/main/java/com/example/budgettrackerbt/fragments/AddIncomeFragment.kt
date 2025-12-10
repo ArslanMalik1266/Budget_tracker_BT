@@ -48,7 +48,7 @@ class AddIncomeFragment : Fragment() {
                     amount = amount,
                     date = System.currentTimeMillis()
                 )
-
+            //comment
                 // Insert into Room
                 incomeViewModel.addIncome(income)
                 amountEt.text.clear()
