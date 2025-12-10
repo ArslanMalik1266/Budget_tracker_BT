@@ -7,9 +7,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.budgettrackerbt.R
-import com.example.budgettrackerbt.dataClass.Spending
+import com.example.budgettrackerbt.dataClass.Income
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
-class SpendingAdapter(private val spendingList: List<Spending>) :
+class SpendingAdapter(private var incomeList: List<Income>) :
     RecyclerView.Adapter<SpendingAdapter.SpendingViewHolder>() {
 
     inner class SpendingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,12 +29,26 @@ class SpendingAdapter(private val spendingList: List<Spending>) :
     }
 
     override fun onBindViewHolder(holder: SpendingViewHolder, position: Int) {
-        val spending = spendingList[position]
-        holder.image.setImageResource(spending.imageRes)
-        holder.heading.text = spending.heading
-        holder.amount.text = spending.amount
-        holder.date.text = spending.date
+        val income = incomeList[position]
+        holder.heading.text = income.title
+        holder.amount.text = "Rs. ${income.amount}"
+        val sdf = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+        holder.date.text = sdf.format(Date(income.date))
+//
+//        val imageRes = when (income.category) {
+//            "Restaurant" -> R.drawable.restaurant
+//            "Shopping" -> R.drawable.shopping
+//            "Transport" -> R.drawable.transport
+//            else -> {}
+//        }
+//        holder.image.setImageResource(imageRes as Int)
+
     }
 
-    override fun getItemCount(): Int = spendingList.size
+    override fun getItemCount(): Int = incomeList.size
+
+    fun updateData ( newList : List<Income>){
+        incomeList = newList
+        notifyDataSetChanged()
+    }
 }

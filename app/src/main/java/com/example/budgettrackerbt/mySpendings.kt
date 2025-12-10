@@ -8,17 +8,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.budgettrackerbt.adaptor.SpendingAdapter
-import com.example.budgettrackerbt.dataClass.Spending
-import com.github.mikephil.charting.charts.LineChart
-import com.github.mikephil.charting.data.Entry
-import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
+import com.example.budgettrackerbt.viewModel.IncomeViewModel
 import com.google.android.material.appbar.MaterialToolbar
 
 class mySpendings : AppCompatActivity() {
+    private lateinit var incomeViewModel: IncomeViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -39,16 +38,14 @@ class mySpendings : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.lower_recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
-
-        val spendingList = listOf(
-            Spending(R.drawable.shopping, "Shopping", "Rs. 1200", "08 Dec 2025"),
-            Spending(R.drawable.transport, "Transport", "Rs. 300", "07 Dec 2025"),
-            Spending(R.drawable.shopping, "Shopping", "Rs. 2500", "05 Dec 2025"),
-            Spending(R.drawable.restaurant, "Restaurant", "Rs. 450", "04 Dec 2025")
-        )
-
-        val adapter = SpendingAdapter(spendingList)
+        val adapter = SpendingAdapter(emptyList())
         recyclerView.adapter = adapter
 
+
+        incomeViewModel = ViewModelProvider(this).get(IncomeViewModel::class.java)
+
+        incomeViewModel.allIncome.observe(this) { incomeList ->
+            adapter.updateData(incomeList)
+        }
     }
 }

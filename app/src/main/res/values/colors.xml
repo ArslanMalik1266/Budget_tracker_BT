@@ -9,4 +9,5 @@
     <color name="secondary_card_background_color">#81B2CA</color>
     <color name="light_green">#D9E7E5</color>
     <color name="light_expense_card">#E6E2E6</color>
+    <color name="light_red">#FFD6D6</color>
 </resources>
