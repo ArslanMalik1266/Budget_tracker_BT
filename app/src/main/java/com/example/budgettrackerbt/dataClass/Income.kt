@@ -4,11 +4,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 
-@Entity (tableName = "income_table")
-data class Income(
+@Entity(tableName = "transactions")
+data class Transaction(
     @PrimaryKey(autoGenerate = true)
-    val id : Int = 0,
-    val amount : Int,
-    val title : String,
-    val date : Long
+    val id: Int = 0,
+    val type: String,
+    val amount: Int,
+    val category: String,
+    val date: Long
 )

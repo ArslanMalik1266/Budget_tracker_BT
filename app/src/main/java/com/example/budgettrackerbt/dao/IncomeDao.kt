@@ -4,14 +4,21 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.budgettrackerbt.dataClass.Income
+import com.example.budgettrackerbt.dataClass.Transaction
 
 @Dao
-interface IncomeDao {
+interface TransactionDao {
 
     @Insert
-    suspend fun insertIncome(income: Income)
+    suspend fun insert(transaction: Transaction)
 
-    @Query("SELECT * FROM income_table ORDER BY id DESC")
-    fun getAllIncome(): LiveData<List<Income>>
+    @Query("SELECT * FROM transactions ORDER BY date DESC")
+    fun getAllTransactions(): LiveData<List<Transaction>>
+
+    @Query("SELECT * FROM transactions WHERE type = 'income'")
+    fun getIncome(): LiveData<List<Transaction>>
+
+    @Query("SELECT * FROM transactions WHERE type = 'expense'")
+    fun getExpense(): LiveData<List<Transaction>>
+
 }

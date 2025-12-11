@@ -1,26 +1,40 @@
 package com.example.budgettrackerbt.viewModel
 
 import android.app.Application
+
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
+
 import androidx.lifecycle.viewModelScope
-import com.example.budgettrackerbt.dataClass.Income
+import com.example.budgettrackerbt.dataClass.Transaction
 import com.example.budgettrackerbt.database.AppDatabase
-import com.example.budgettrackerbt.repository.IncomeRepository
+import com.example.budgettrackerbt.repository.TransactionRepository
 import kotlinx.coroutines.launch
 
 class IncomeViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repo = IncomeRepository(AppDatabase.getDatabase(application).incomeDao())
+    private val repository: TransactionRepository
 
-    val allIncome: LiveData<List<Income>> = repo.getAllIncome
+    val allTransactions: LiveData<List<Transaction>>
+    val income: LiveData<List<Transaction>>
+    val expense: LiveData<List<Transaction>>
 
-    fun addIncome(income: Income) {
+
+
+    init {
+        val dao = AppDatabase.getDatabase(application).transactionDao()
+        repository = TransactionRepository(dao)
+
+        allTransactions = repository.allTransactions
+        income = repository.incomeList
+        expense = repository.expenseList
+    }
+
+    fun addTransaction(income: Transaction) {
         viewModelScope.launch {
-            repo.insertIncome(income)
+            repository.insert(income)
 
         }
     }
+
 }

@@ -1,5 +1,6 @@
 package com.example.budgettrackerbt
 
+import TransactionAdapter
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -11,12 +12,12 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.budgettrackerbt.adaptor.SpendingAdapter
 import com.example.budgettrackerbt.viewModel.IncomeViewModel
 import com.google.android.material.appbar.MaterialToolbar
 
 class mySpendings : AppCompatActivity() {
     private lateinit var incomeViewModel: IncomeViewModel
+    private lateinit var transactionAdapter: TransactionAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,16 +37,15 @@ class mySpendings : AppCompatActivity() {
             finish()
         }
 
-        val recyclerView: RecyclerView = findViewById(R.id.lower_recycler_view)
+        val recyclerView = findViewById<RecyclerView>(R.id.lower_recycler_view)
+
+        transactionAdapter = TransactionAdapter(listOf())
+        recyclerView.adapter = transactionAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = SpendingAdapter(emptyList())
-        recyclerView.adapter = adapter
-
-
         incomeViewModel = ViewModelProvider(this).get(IncomeViewModel::class.java)
 
-        incomeViewModel.allIncome.observe(this) { incomeList ->
-            adapter.updateData(incomeList)
+        incomeViewModel.allTransactions.observe(this) { incomeList ->
+            transactionAdapter.updateList(incomeList)
         }
     }
 }

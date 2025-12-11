@@ -1,15 +1,16 @@
 package com.example.budgettrackerbt.repository
 
-import androidx.lifecycle.LiveData
-import com.example.budgettrackerbt.dao.IncomeDao
-import com.example.budgettrackerbt.dataClass.Income
+import com.example.budgettrackerbt.dao.TransactionDao
+import com.example.budgettrackerbt.dataClass.Transaction
 
-class IncomeRepository(private val incomeDao: IncomeDao) {
 
-    val getAllIncome : LiveData<List<Income>> = incomeDao.getAllIncome()
+class TransactionRepository(private val dao: TransactionDao) {
 
-    suspend fun insertIncome(income: Income) {
-        incomeDao.insertIncome(income)
+    val allTransactions = dao.getAllTransactions()
+    val incomeList = dao.getIncome()
+    val expenseList = dao.getExpense()
+
+    suspend fun insert(transaction: Transaction) {
+        dao.insert(transaction)
     }
-
 }

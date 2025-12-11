@@ -4,13 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.budgettrackerbt.dao.IncomeDao
-import com.example.budgettrackerbt.dataClass.Income
+import com.example.budgettrackerbt.dao.TransactionDao
+import com.example.budgettrackerbt.dataClass.Transaction
 
-@Database(entities = [Income::class], version = 3, exportSchema = false)
+@Database(entities = [Transaction::class], version = 5, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun incomeDao(): IncomeDao
+    abstract fun transactionDao(): TransactionDao
 
     companion object {
         @Volatile

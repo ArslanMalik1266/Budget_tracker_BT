@@ -1,5 +1,3 @@
-package com.example.budgettrackerbt.adaptor
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,48 +5,48 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.budgettrackerbt.R
-import com.example.budgettrackerbt.dataClass.Income
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
+import com.example.budgettrackerbt.dataClass.Transaction
 
-class SpendingAdapter(private var incomeList: List<Income>) :
-    RecyclerView.Adapter<SpendingAdapter.SpendingViewHolder>() {
+class TransactionAdapter(private var list: List<Transaction>) :
+    RecyclerView.Adapter<TransactionAdapter.TransactionVH>() {
 
-    inner class SpendingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val image: ImageView = itemView.findViewById(R.id.item_image)
-        val heading: TextView = itemView.findViewById(R.id.item_heading)
-        val amount: TextView = itemView.findViewById(R.id.item_amount)
-        val date: TextView = itemView.findViewById(R.id.item_date)
+    inner class TransactionVH(view: View) : RecyclerView.ViewHolder(view) {
+        val icon = view.findViewById<ImageView>(R.id.item_image)
+        val amount = view.findViewById<TextView>(R.id.item_amount)
+        val category = view.findViewById<TextView>(R.id.item_heading)
+        val date = view.findViewById<TextView>(R.id.item_date)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpendingViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_view, parent, false)
-        return SpendingViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransactionVH {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_view, parent, false)
+        return TransactionVH(view)
     }
 
-    override fun onBindViewHolder(holder: SpendingViewHolder, position: Int) {
-        val income = incomeList[position]
-        holder.heading.text = income.title
-        holder.amount.text = "Rs. ${income.amount}"
-        val sdf = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
-        holder.date.text = sdf.format(Date(income.date))
-//
-//        val imageRes = when (income.category) {
-//            "Restaurant" -> R.drawable.restaurant
-//            "Shopping" -> R.drawable.shopping
-//            "Transport" -> R.drawable.transport
-//            else -> {}
-//        }
-//        holder.image.setImageResource(imageRes as Int)
+    override fun onBindViewHolder(holder: TransactionVH, position: Int) {
+        val item = list[position]
 
+        holder.category.text = item.category
+        holder.amount.text = "Rs ${item.amount}"
+
+        holder.icon.setImageResource(
+            when (item.type) {
+                "income" -> R.drawable.income_src
+                "expense" -> when (item.category) {
+                    "Food" -> R.drawable.restaurant
+                    "Transport" -> R.drawable.transport
+                    "Shopping" -> R.drawable.shopping
+                    else -> R.drawable.expense_src
+                }
+
+                else -> R.drawable.expense_src
+            }
+        )
     }
 
-    override fun getItemCount(): Int = incomeList.size
+    override fun getItemCount(): Int = list.size
 
-    fun updateData ( newList : List<Income>){
-        incomeList = newList
+    fun updateList(newList: List<Transaction>) {
+        list = newList
         notifyDataSetChanged()
     }
 }

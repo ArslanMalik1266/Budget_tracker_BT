@@ -10,4 +10,6 @@
     <color name="light_green">#D9E7E5</color>
     <color name="light_expense_card">#E6E2E6</color>
     <color name="light_red">#FFD6D6</color>
+    <color name="light_grey">#F0F0F0</color>
+    <color name="primary_blue">#1E88E5</color>
 </resources>

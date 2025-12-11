@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/grey_background"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_background">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/top_app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/grey_background"
-        app:navigationIcon="@drawable/grid_icon"
         app:title="Dashboard"
         app:titleCentered="true"
         app:titleTextAppearance="@style/ToolbarTitleBold"
-        app:titleTextColor="@color/black" />
+        app:titleTextColor="@color/black" >
+
+
+    </com.google.android.material.appbar.MaterialToolbar>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -65,6 +70,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/available_blnc_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -143,6 +149,7 @@
         </LinearLayout>
 
             <TextView
+                android:id="@+id/budget_planned_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -168,6 +175,7 @@
             app:cardCornerRadius="24dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/saving_goal_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp">
@@ -301,6 +309,7 @@
                         android:scaleType="centerInside"/>
 
                     <TextView
+                        android:id="@+id/expense_amount_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Rs. 1400"
@@ -360,4 +369,18 @@
         app:layout_anchorGravity="center"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FAB.Circle" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/black"
+        app:menu="@menu/drawer_menu"
+        android:paddingTop="12dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"/>
+</androidx.drawerlayout.widget.DrawerLayout>
