@@ -33,10 +33,10 @@
         android:id="@+id/confirm_btn"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/rounded_btn"
+        android:backgroundTint="@color/fab_btn_color"
         android:text="Set"
         android:textSize="16sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:fontFamily="@font/inter_bold" />
 
 </LinearLayout>

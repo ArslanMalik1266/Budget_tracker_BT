@@ -11,363 +11,361 @@
         android:layout_height="match_parent"
         android:background="@color/grey_background">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/top_app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/grey_background"
-        app:title="Dashboard"
-        app:titleCentered="true"
-        app:titleTextAppearance="@style/ToolbarTitleBold"
-        app:titleTextColor="@color/black" >
-
-
-    </com.google.android.material.appbar.MaterialToolbar>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-       >
-
-    <LinearLayout
-        android:id="@+id/contraint_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="72dp"
-        android:paddingHorizontal="16dp"
-        android:paddingBottom="72dp">
-
-
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/main_card_background_color"
-            app:cardCornerRadius="16dp">
+            android:background="@color/grey_background"
+            app:title="Dashboard"
+            app:navigationIcon="@drawable/grid_icon"
+            app:titleCentered="true"
+            app:titleTextAppearance="@style/ToolbarTitleBold"
+            app:titleTextColor="@color/black">
 
-            <RelativeLayout
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:layout_marginTop="?attr/actionBarSize">
+
+            <LinearLayout
+                android:id="@+id/contraint_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-               >
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="72dp">
 
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/main_card_background_color"
+                    app:cardCornerRadius="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="24dp">
+
+                            <TextView
+                                android:id="@+id/blnc_heading"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:alpha="0.7"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="Available balance"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/available_blnc_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/inter_semi_bold"
+                                android:text="Rs. 3,455"
+                                android:textColor="@color/white"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="24dp"
+                                android:layout_marginBottom="12dp"
+                                android:fontFamily="@font/inter_semi_bold"
+                                android:text="See details"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/card_image"
+                            android:layout_width="160dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/main_box_pic" />
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/secondary_card_background_color"
+                    app:cardCornerRadius="24dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="8dp">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/budget_planner_heading"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="Spending Limit"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:alpha="0.7"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="Cash available"
+                                android:textColor="@color/white"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/budget_planned_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/inter_semi_bold"
+                            android:text="Rs. 2,200"
+                            android:textColor="@color/white"
+                            android:textSize="24sp" />
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="24dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/saving_goal_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <LinearLayout
+                            android:id="@+id/text_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/saving_goal_img"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <TextView
+                                android:id="@+id/saving_goal_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="Create a saving goal"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:alpha="0.7"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="Decide how much to save and stay on track every month."
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/saving_goal_img"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/saving_goal_pic"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/inter_semi_bold"
+                    android:text="Cash"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="24dp">
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:weightSum="2">
 
-                    <TextView
-                        android:id="@+id/blnc_heading"
-                        android:layout_width="wrap_content"
+                    <!-- First CardView -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:alpha="0.7"
-                        android:fontFamily="@font/inter_medium"
-                        android:text="Available balance"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="60dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp">
 
-                    <TextView
-                        android:id="@+id/available_blnc_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/inter_semi_bold"
-                        android:text="Rs. 3,455"
-                        android:textColor="@color/white"
-                        android:textSize="24sp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_green"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/income_src" />
+
+                            <TextView
+                                android:id="@+id/income_amount_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/inter_semi_bold"
+                                android:text="Rs. 1800"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="Income"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Second CardView -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="24dp"
-                        android:layout_marginBottom="12dp"
-                        android:fontFamily="@font/inter_semi_bold"
-                        android:text="See details"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/light_expense_card"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <ImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/expense_src" />
+
+                            <TextView
+                                android:id="@+id/expense_amount_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:fontFamily="@font/inter_semi_bold"
+                                android:text="Rs. 1400"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="Expense"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/card_image"
-                    android:layout_width="160dp"
-                    android:layout_height="120dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/main_box_pic"
-                    />
 
-            </RelativeLayout>
+            </LinearLayout>
 
+        </androidx.core.widget.NestedScrollView>
 
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottom_app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/secondary_card_background_color"
-            app:cardCornerRadius="24dp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            >
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-           >
-
-            <TextView
-                android:id="@+id/budget_planner_heading"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_medium"
-                android:text="Budget for Ocotober"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:alpha="0.7"
-                android:fontFamily="@font/inter_regular"
-                android:text="Cash available"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-
-            <TextView
-                android:id="@+id/budget_planned_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/inter_semi_bold"
-                android:text="Rs. 2,200"
-                android:layout_marginEnd="16dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:textColor="@color/white"
-                android:textSize="24sp" />
-
-
-        </RelativeLayout>
-
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_gravity="bottom"
             android:backgroundTint="@color/white"
-            app:cardCornerRadius="24dp">
+            app:fabAlignmentMode="center"
+            app:fabAnchorMode="cradle"
+            app:fabCradleMargin="10dp"
+            app:fabCradleRoundedCornerRadius="32dp"
+            app:fabCradleVerticalOffset="0dp" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/saving_goal_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/transparent"
+            app:itemIconTint="@color/black"
+            app:itemTextColor="@color/black"
+            app:menu="@menu/bottom_app_bar_menu" />
 
-                <LinearLayout
-                    android:id="@+id/text_layout"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/saving_goal_img"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent">
-
-                    <TextView
-                        android:id="@+id/saving_goal_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_medium"
-                        android:text="Create a saving goal"
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:alpha="0.7"
-                        android:fontFamily="@font/inter_regular"
-                        android:text="Decide how much to save and stay on track every month."
-                        android:textColor="@color/black"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/saving_goal_img"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/saving_goal_pic"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cash"
-            android:textSize="16sp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/inter_semi_bold"
-            android:textColor="@color/black"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:weightSum="2">
-
-            <!-- First CardView -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginBottom="60dp"
-                android:layout_marginEnd="8dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="@color/light_green"
-                    android:gravity="center_horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/income_src"
-                        android:scaleType="centerInside"/>
-
-                    <TextView
-                        android:id="@+id/income_amount_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rs. 1800"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/inter_semi_bold"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Income"
-                        android:textSize="14sp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/inter_regular"
-                        android:layout_marginTop="4dp"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <!-- Second CardView -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:backgroundTint="@color/white"
-                app:cardCornerRadius="16dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:background="@color/light_expense_card"
-                    android:gravity="center_horizontal">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/expense_src"
-                        android:scaleType="centerInside"/>
-
-                    <TextView
-                        android:id="@+id/expense_amount_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Rs. 1400"
-                        android:textSize="16sp"
-                        android:fontFamily="@font/inter_semi_bold"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="8dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Expense"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/inter_regular"
-                        android:textColor="@color/black"
-                        android:layout_marginTop="4dp"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:backgroundTint="@color/white"
-        app:fabAlignmentMode="center"
-        app:fabAnchorMode="cradle"
-        app:fabCradleMargin="10dp"
-        app:fabCradleRoundedCornerRadius="32dp"
-        app:fabCradleVerticalOffset="0dp" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@android:color/transparent"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
-        app:menu="@menu/bottom_app_bar_menu" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/fab_btn_color"
-        android:src="@drawable/add_img"
-        app:layout_anchor="@id/bottom_app_bar"
-        app:layout_anchorGravity="center"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FAB.Circle" />
+            android:backgroundTint="@color/fab_btn_color"
+            android:src="@drawable/add_img"
+            app:layout_anchor="@id/bottom_app_bar"
+            app:layout_anchorGravity="center"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.FAB.Circle" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
@@ -377,10 +375,9 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@color/white"
-        app:itemTextColor="@color/black"
+        app:headerLayout="@layout/activity_nav_header"
         app:itemIconTint="@color/black"
-        app:menu="@menu/drawer_menu"
-        android:paddingTop="12dp"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"/>
+        app:itemRippleColor="@null"
+        app:itemTextColor="@color/black"
+        app:menu="@menu/drawer_menu" />
 </androidx.drawerlayout.widget.DrawerLayout>

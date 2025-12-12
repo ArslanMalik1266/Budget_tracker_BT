@@ -20,7 +20,6 @@ class IncomeViewModel(application: Application) : AndroidViewModel(application) 
     val expense: LiveData<List<Transaction>>
 
 
-
     init {
         val dao = AppDatabase.getDatabase(application).transactionDao()
         repository = TransactionRepository(dao)
@@ -34,6 +33,17 @@ class IncomeViewModel(application: Application) : AndroidViewModel(application) 
         viewModelScope.launch {
             repository.insert(income)
 
+        }
+    }
+
+    fun clearAllData() {
+        viewModelScope.launch {
+            repository.deleteAllTransactions()
+        }
+    }
+    fun undoLastTransaction() {
+        viewModelScope.launch {
+            repository.deleteLastTransaction()
         }
     }
 

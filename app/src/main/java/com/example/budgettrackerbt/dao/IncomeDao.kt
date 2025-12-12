@@ -21,4 +21,9 @@ interface TransactionDao {
     @Query("SELECT * FROM transactions WHERE type = 'expense'")
     fun getExpense(): LiveData<List<Transaction>>
 
+    @Query("DELETE FROM transactions")
+    suspend fun deleteAllTransactions()
+    @Query("DELETE FROM transactions WHERE id = (SELECT id FROM transactions ORDER BY id DESC LIMIT 1)")
+    suspend fun deleteLastTransaction()
+
 }

@@ -13,4 +13,10 @@ class TransactionRepository(private val dao: TransactionDao) {
     suspend fun insert(transaction: Transaction) {
         dao.insert(transaction)
     }
+    suspend fun deleteAllTransactions(){
+        dao.deleteAllTransactions()
+    }
+    suspend fun deleteLastTransaction() {
+        dao.deleteLastTransaction()
+    }
 }

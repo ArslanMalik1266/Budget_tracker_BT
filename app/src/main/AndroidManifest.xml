@@ -11,16 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BudgetTrackerBT"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:forceDarkAllowed="false">
+
         <activity
             android:name=".itemView"
             android:exported="false" />
         <activity
             android:name=".mySpendings"
-            android:exported="true"/>
-
+            android:screenOrientation="portrait"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
