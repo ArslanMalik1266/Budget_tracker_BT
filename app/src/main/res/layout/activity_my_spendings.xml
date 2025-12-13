@@ -13,30 +13,29 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:navigationIcon="@drawable/back_arrow"
         app:title="My Spendings"
-        app:titleTextColor="@color/black"
         app:titleCentered="true"
         app:titleTextAppearance="@style/ToolbarTitleBold"
-        android:background="@color/white"
-        app:navigationIcon="@drawable/back_arrow"/>
+        app:titleTextColor="@color/black" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="72dp"
-        >
+        android:layout_marginTop="72dp">
 
 
         <ImageView
             android:id="@+id/imageView_bg"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/my_spendings_bg"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.25"
-            android:src="@drawable/my_spendings_bg"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <FrameLayout
@@ -44,20 +43,20 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/rounded_top_blue"
-            app:layout_constraintTop_toBottomOf="@id/imageView_bg"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView_bg">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/middle_top_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:padding="12dp"
+                android:layout_gravity="top"
                 android:layout_marginHorizontal="24dp"
                 android:layout_marginTop="16dp"
-                android:layout_gravity="top">
+                android:orientation="vertical"
+                android:padding="12dp">
 
                 <TextView
                     android:id="@+id/budget_tv"
@@ -79,20 +78,19 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                   />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
                     style="@android:style/Widget.ProgressBar.Horizontal"
                     android:layout_width="0dp"
-                    android:layout_height="16dp"
+                    android:layout_height="14dp"
+                    android:layout_marginTop="16dp"
                     android:max="100"
                     android:progress="30"
-                    android:layout_marginTop="16dp"
+                    android:progressDrawable="@drawable/progress_drawable"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:progressDrawable="@drawable/progress_drawable"
                     app:layout_constraintTop_toBottomOf="@+id/budget_tv" />
 
 
@@ -107,11 +105,11 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/rounded_top_rounded_grey"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:padding="16dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.6"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:id="@+id/your_budget_tv"
@@ -123,15 +121,14 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/lower_recycler_view"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:clipToPadding="false"
                 android:layout_marginTop="8dp"
+                android:clipToPadding="false"
                 android:paddingBottom="16dp"
                 android:scrollbars="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"

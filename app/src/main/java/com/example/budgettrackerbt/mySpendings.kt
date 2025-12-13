@@ -35,6 +35,7 @@ class mySpendings : AppCompatActivity() {
             insets
         }
 
+
         val toolbar: MaterialToolbar = findViewById(R.id.toolbar)
         toolbar.setNavigationOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

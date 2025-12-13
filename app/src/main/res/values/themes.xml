@@ -7,8 +7,8 @@
 
     <style name="Theme.BudgetTrackerBT" parent="Base.Theme.BudgetTrackerBT" />
     <style name="ToolbarTitleBold" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/inter_bold</item>
     </style>
     <style name="ShapeAppearanceOverlay.FAB.Circle" parent="">
         <item name="cornerFamily">rounded</item>
