@@ -1,10 +1,11 @@
 Budget Tracker App
 
 This is a simple and intuitive Budget Tracker Android app built with Kotlin, designed to help users manage their finances efficiently. The app allows users to record their income and expenses, track their available balance, and plan their monthly budget. Users can also set a saving goal and monitor their progress over time. The app features a modern and clean UI with a bottom navigation bar, a floating action button for adding transactions, and a navigation drawer with options like Undo and Reset. Data is stored using Room database and ViewModel architecture, ensuring smooth performance and easy scalability. This app is ideal for anyone who wants a simple yet effective tool to stay on top of their personal finances.
-<img src="<img width="250" alt="Screenshot_20251212_201518" src="https://github.com/user-attachments/assets/9f4eb895-f303-4dac-80bd-cf2daedd0a76" />
-<img width="250"  alt="Screenshot_20251212_201548" src="https://github.com/user-attachments/assets/36262c29-0547-4309-aa2e-84b0ad3b0c76" />
-<img width="250"  alt="Screenshot_20251212_201627" src="https://github.com/user-attachments/assets/53fdb82e-140d-4952-9ca1-1fbe12fc41a4" />
-<img width="250" alt="Screenshot_20251212_201706" src="https://github.com/user-attachments/assets/0fb2011b-6ea7-40bf-ae0f-c8962996c952" />
+<img width="250"  alt="home_screen" src="https://github.com/user-attachments/assets/5e7d02b4-d849-4cf6-b3c2-cd63da993b3e" />
+<img width="250"  alt="add_income" src="https://github.com/user-attachments/assets/44cb7f85-6b59-4e6c-b575-07086cf07916" />
+<img width="250"  alt="drawer" src="https://github.com/user-attachments/assets/ae8b9ba8-486c-42b5-81cc-3fc085becefe" />
+<img width="250"  alt="my_spendings" src="https://github.com/user-attachments/assets/09f76aa0-474e-4021-a60d-8e207578d588" />
+
 
 
 
